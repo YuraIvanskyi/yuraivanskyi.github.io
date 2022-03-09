@@ -8,7 +8,7 @@ import { KinesisElement } from 'vue-kinesis';
 
 <template>
   <kinesis-element :strength="10" axis="x" class="absolute flex items-end h-screen">
-    <img alt="main photo" src="src/assets/crop_photo.png" class="object-right-bottom" />
+    <img alt="main photo" src="src/assets/crop_photo.png" class="lg:object-right-bottom drop-shadow-2xl" />
   </kinesis-element>
   <kinesis-element :strength="15" class="absolute flex items-end -bottom-10 -right-20 h-screen z-20">
     <social-card>
