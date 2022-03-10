@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from 'vue';
 import card from './sub-components/card.vue';
 import timelineElement from './sub-components/timeline-element.vue';
 import IconButton from './sub-components/icon-button.vue';
 import { KinesisElement } from 'vue-kinesis';
+import { ref } from 'vue';
 
 const experience = [
   {
@@ -19,7 +19,7 @@ const experience = [
     description: 'Perform server testing on MMORPG "New World" in Europe'
   },
   {
-    title: 'Recruit',
+    title: 'Volunteer',
     present: true,
     educationanl: false,
     company: 'IT Army of Ukraine (Russian - Ukrainian War)',
@@ -130,7 +130,7 @@ const aboutfacts = [
 ];
 const skills = [
   'game quality assuarance: desktop, mobile',
-  'perform e2e, funtional, performance etc. testing on target product',
+  'perform e2e, functional, performance etc. testing on target product',
   'automation testing using JavaScript, Python',
   'documentation, test plans, test strategies',
   'a bit of front-end development',
@@ -139,26 +139,36 @@ const skills = [
   'Languages: Ukrainian (Native), English (C1), Japanese (N5), German (Beginner), Russian (Fluent)'
 ];
 
-let active = ref(0);
+let section = ref(0);
+
+function nextSection() {
+  if(section.value < 3 )
+    section.value ++;
+}
+function prevSection() {
+  if(section.value > 0)
+    section.value --;
+}
 
 </script>
 
 <template>
-  <div class>
-    <div class="flex flex-col gap-4">
-      <kinesis-element :strength="20">
+    <div class="flex flex-col gap-4"> 
+      <kinesis-element :strength="20" class="z-50 absolute top-0">
         <div class="relative z-50">
           <p
             class="lg:text-9xl md:text-7xl text-5xl text-white whitespace-nowrap drop-shadow-2xl name-font z-40 top-1 left-1 absolute"
           >Yuriy Ivanskyi</p>
           <p
-            class="lg:text-9xl md:text-7xl text-5xl text-rose-600 whitespace-nowrap drop-shadow-2xl name-font z-30"
+            class="lg:text-9xl md:text-7xl text-5xl text-rose-600 whitespace-nowrap drop-shadow-2xl text-left name-font z-30"
           >Yuriy Ivanskyi</p>
         </div>
       </kinesis-element>
-
-      <kinesis-element>
-        <card title="About">
+      <kinesis-element class="lg:mt-28 mt-12">
+        <icon-button icon="prev" @click="prevSection()"></icon-button>
+      </kinesis-element>
+      <kinesis-element v-if="section === 0">
+        <card title="About Yuriy Ivanskyi">
           <div class="flex flex-col gap-1 justify-left px-4">
             <p class="text-base text-center mx-0 font-medium italic text-gray-400">
               "I bring my gaming experience and test-engineering industry expertise together, while being able to shapeshift for upcoming challenges to enhance your next product.
@@ -179,23 +189,23 @@ let active = ref(0);
           </div>
         </card>
       </kinesis-element>
-      <kinesis-element>
+      <kinesis-element v-if="section === 1">
         <card title="Skills">
           <div class="flex flex-col gap-1 justify-center px-4">
             <p
               class="text-base text-left mx-0 font-normal text-gray-500"
-            >List of thingies I can/know/do:</p>
+            >List of tasks I can/know/do:</p>
             <p
               v-for="line in skills"
               class="text-sm text-left ml-4 font-normal text-gray-500"
             >- {{ line }}</p>
             <p
               class="text-base text-left mx-0 font-normal text-gray-500"
-            >List of goodies I can/know/use:</p>
-            <div class="flex flex-wrap gap-4 justify-center">
+            >List of tech & tools I can/know/use:</p>
+            <div class="flex flex-wrap gap-2 justify-center">
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 488 512"
@@ -207,7 +217,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -218,7 +228,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 496 512"
                 >
@@ -229,7 +239,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -240,7 +250,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -251,7 +261,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -262,7 +272,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 640 512"
                 >
@@ -274,7 +284,7 @@ let active = ref(0);
 
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -285,7 +295,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -297,7 +307,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -309,7 +319,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -324,7 +334,7 @@ let active = ref(0);
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                 >
                   <path
                     d="M 6 4 C 4.895 4 4 4.895 4 6 L 4 24 C 4 25.105 4.895 26 6 26 L 24 26 C 25.105 26 26 25.105 26 24 L 26 6.1210938 L 18.5 13.621094 L 13.439453 8.5605469 L 15.560547 6.4394531 L 18.5 9.3789062 L 23.878906 4 L 6 4 z M 9.9902344 14.880859 C 11.821234 14.880859 13.088094 15.871359 13.121094 17.318359 L 11.285156 17.318359 C 11.242156 16.765359 10.716578 16.380859 10.017578 16.380859 C 9.3185781 16.380859 8.859375 16.710469 8.859375 17.230469 C 8.859375 17.658469 9.2062969 17.907312 10.029297 18.070312 L 11.037109 18.265625 C 12.581109 18.563625 13.273438 19.263906 13.273438 20.503906 C 13.274438 22.134906 12.028469 23.119141 9.9804688 23.119141 C 8.0034687 23.119141 6.7576094 22.187641 6.7246094 20.681641 L 8.6210938 20.681641 C 8.6700937 21.250641 9.2395 21.613281 10.0625 21.613281 C 10.8045 21.613281 11.3125 21.256187 11.3125 20.742188 C 11.3125 20.309188 10.972125 20.075484 10.078125 19.896484 L 9.0488281 19.691406 C 7.6188281 19.420406 6.8828125 18.640156 6.8828125 17.410156 C 6.8828125 15.882156 8.1052344 14.880859 9.9902344 14.880859 z M 18.029297 16.892578 C 19.859297 16.892578 20.925781 18.002484 20.925781 19.896484 L 20.925781 20.419922 L 16.931641 20.419922 L 16.931641 20.515625 C 16.947641 21.288625 17.389375 21.767578 18.109375 21.767578 C 18.658375 21.767578 19.038016 21.56475 19.166016 21.21875 L 20.888672 21.21875 C 20.680672 22.37575 19.592641 23.107422 18.056641 23.107422 C 16.162641 23.107422 15.074219 21.986062 15.074219 20.039062 C 15.074219 18.081063 16.189297 16.892578 18.029297 16.892578 z M 18.039062 18.232422 C 17.420063 18.232422 16.989406 18.663937 16.941406 19.335938 L 19.095703 19.335938 C 19.063703 18.642938 18.668062 18.232422 18.039062 18.232422 z"
@@ -333,7 +343,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                   role="img"
@@ -348,7 +358,7 @@ let active = ref(0);
               </icon-button>
               <icon-button>
                 <svg
-                  class="w-10 h-10 px-1 py-1 fill-current"
+                  class="w-8 h-8 px-1 py-1 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 32 32"
                 >
@@ -361,9 +371,9 @@ let active = ref(0);
           </div>
         </card>
       </kinesis-element>
-      <kinesis-element>
+      <kinesis-element v-if="section === 2">
         <card title="Experience">
-          <div class="flex flex-wrap gap-4 justify-left px-4">
+          <div class="flex flex-col gap-4 justify-left px-4">
             <ol class="relative border-l border-gray-200">
               <timeline-element
                 v-for="period in experience"
@@ -378,9 +388,9 @@ let active = ref(0);
           </div>
         </card>
       </kinesis-element>
-      <kinesis-element>
+      <kinesis-element v-if="section === 3">
         <card title="Education">
-          <div class="flex flex-wrap gap-4 justify-left px-4">
+          <div class="flex flex-col gap-4 justify-left px-4">
             <ol class="relative border-l border-gray-200">
               <timeline-element
                 v-for="period in education"
@@ -395,8 +405,11 @@ let active = ref(0);
           </div>
         </card>
       </kinesis-element>
+      <kinesis-element>
+        <icon-button icon="next" @click="nextSection()"></icon-button>
+      </kinesis-element>
+      
     </div>
-  </div>
 </template>
 
 <style>

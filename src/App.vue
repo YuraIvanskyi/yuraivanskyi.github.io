@@ -7,10 +7,10 @@ import { KinesisContainer } from 'vue-kinesis';
 <template>
   <kinesis-container :perspective="1800"
     class="lg:columns-2 pattern-circles bg-fixed h-screen w-screen relative overflow-hidden">
-    <div class="h-screen px-4 py-4 z-500">
+    <div class="h-screen px-6 py-6 z-500 overflow-hidden scroll-smooth">
       <left-section />
     </div>
-    <div class="h-screen">
+    <div class="h-screen overflow-y-auto">
       <right-section />
     </div>
   </kinesis-container>

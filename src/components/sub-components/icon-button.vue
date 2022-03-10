@@ -11,7 +11,7 @@ defineProps({
 <template>
     <a
         :href="link"
-        class="bg-rose-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full transition duration-75 ease-in-out delay-75 hover:scale-110"
+        class="bg-rose-600 border-4 border-white cursor-pointer justify-center p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full transition duration-75 ease-in-out delay-75 hover:scale-110"
         type="button"
     >
         <svg
@@ -90,6 +90,32 @@ defineProps({
                 d="M275.517,133C196.933,133,133,196.933,133,275.516 s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6 c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083 C362.6,323.611,323.611,362.6,275.517,362.6z"
             />
             <circle id="XMLID_83_" fill="#fff" cx="418.306" cy="134.072" r="34.149" />
+        </svg>
+        <svg
+            v-else-if="icon === 'prev'"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+            />
+        </svg>
+        <svg
+            v-else-if="icon === 'next'"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+            />
         </svg>
         <slot v-else></slot>
         {{ text }}
