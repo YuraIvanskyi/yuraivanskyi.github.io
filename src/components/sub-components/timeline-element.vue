@@ -48,6 +48,6 @@ let hovered = ref(false);
 
 #menu:hover #list {
     max-height: 500px;
-    transition: max-height 0.25s ease-in;
+    transition: max-height 0.5s ease-in;
 }
 </style>

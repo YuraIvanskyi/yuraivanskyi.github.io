@@ -142,34 +142,39 @@ const skills = [
 let section = ref(0);
 
 function nextSection() {
-  if(section.value < 3 )
-    section.value ++;
+  if (section.value < 3)
+    section.value++;
+  else
+    section.value = 0;
 }
 function prevSection() {
-  if(section.value > 0)
-    section.value --;
+  if (section.value > 0)
+    section.value--;
+  else
+    section.value = 3;
 }
 
 </script>
 
 <template>
-    <div class="flex flex-col gap-4"> 
-      <kinesis-element :strength="20" class="z-50 absolute top-0">
-        <div class="relative z-50">
-          <p
-            class="lg:text-9xl md:text-7xl text-5xl text-white whitespace-nowrap drop-shadow-2xl name-font z-40 top-1 left-1 absolute"
-          >Yuriy Ivanskyi</p>
-          <p
-            class="lg:text-9xl md:text-7xl text-5xl text-rose-600 whitespace-nowrap drop-shadow-2xl text-left name-font z-30"
-          >Yuriy Ivanskyi</p>
-        </div>
-      </kinesis-element>
-      <kinesis-element class="lg:mt-28 mt-12">
+  <div class="flex flex-col gap-1 h-screen">
+    <kinesis-element :strength="20" class="z-50 absolute top-0">
+      <div class="relative z-50">
+        <p
+          class="lg:text-9xl md:text-7xl text-5xl text-white whitespace-nowrap drop-shadow-2xl name-font z-40 top-1 left-1 absolute"
+        >Yuriy Ivanskyi</p>
+        <p
+          class="lg:text-9xl md:text-7xl text-5xl text-rose-600 whitespace-nowrap drop-shadow-2xl text-left name-font z-30"
+        >Yuriy Ivanskyi</p>
+      </div>
+    </kinesis-element>
+    <div class="flex flex-col justify-center h-full gap-2 lg:mt-28 mt-12">
+      <kinesis-element class="z-50">
         <icon-button icon="prev" @click="prevSection()"></icon-button>
       </kinesis-element>
       <kinesis-element v-if="section === 0">
         <card title="About Yuriy Ivanskyi">
-          <div class="flex flex-col gap-1 justify-left px-4">
+          <div class="flex flex-col gap-1 justify-left px-4 pb-2">
             <p class="text-base text-center mx-0 font-medium italic text-gray-400">
               "I bring my gaming experience and test-engineering industry expertise together, while being able to shapeshift for upcoming challenges to enhance your next product.
               <br />Call it a magic spell or a buff!"
@@ -191,7 +196,7 @@ function prevSection() {
       </kinesis-element>
       <kinesis-element v-if="section === 1">
         <card title="Skills">
-          <div class="flex flex-col gap-1 justify-center px-4">
+          <div class="flex flex-col gap-1 justify-center px-4 pb-2">
             <p
               class="text-base text-left mx-0 font-normal text-gray-500"
             >List of tasks I can/know/do:</p>
@@ -406,10 +411,10 @@ function prevSection() {
         </card>
       </kinesis-element>
       <kinesis-element>
-        <icon-button icon="next" @click="nextSection()"></icon-button>
+        <icon-button icon="next" class="z-50" @click="nextSection()"></icon-button>
       </kinesis-element>
-      
     </div>
+  </div>
 </template>
 
 <style>
