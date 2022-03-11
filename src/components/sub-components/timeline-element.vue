@@ -1,5 +1,4 @@
 <script setup>
-import { list } from 'postcss';
 import { ref } from 'vue';
 
 defineProps({

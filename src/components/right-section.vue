@@ -4,7 +4,6 @@ import iconButton from './sub-components/icon-button.vue';
 import decorCircle from './sub-components/decor-circle.vue';
 import DecorCircle from './sub-components/decor-circle.vue';
 import { KinesisElement } from 'vue-kinesis';
-import Card from './sub-components/card.vue';
 </script>
 
 <template>
@@ -12,7 +11,7 @@ import Card from './sub-components/card.vue';
     <img alt="main photo" src="/src/assets/crop_photo_outline.png" class="lg:object-right-bottom drop-shadow-2xl" />
   </kinesis-element>
   <kinesis-element :strength="10" axis="x" class="lg:hidden absolute flex items-start top-0 right-0 h-screen z-20">
-    <img alt="main photo" src="/src/assets/photo.JPG" class="object-right-top h-40 w-40 object-cover border-8 border-white rounded-full drop-shadow-2xl" />
+    <img alt="main photo" src="/src/assets/photo.jpg" class="object-right-top h-40 w-40 object-cover border-8 border-white rounded-full drop-shadow-2xl" />
   </kinesis-element>
   <kinesis-element :strength="15" class="lg:visible hidden absolute lg:flex items-end -bottom-10 -right-20 h-screen z-20">
     <social-card>
