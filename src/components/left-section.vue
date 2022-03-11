@@ -136,7 +136,11 @@ const skills = [
   'a bit of front-end development',
   'handle, organize and lead small team',
   'nonchalantly talk on meetings',
-  'Languages: Ukrainian (Native), English (C1), Japanese (N5), German (Beginner), Russian (Fluent)'
+  'Ukrainian (Native)',
+  'English (C1)',
+  'Japanese (N5)',
+  'German (Beginner)',
+  'Russian (Fluent)'
 ];
 
 let section = ref(0);
@@ -408,6 +412,17 @@ function prevSection() {
               />
             </ol>
           </div>
+        </card>
+      </kinesis-element>
+      <kinesis-element v-if="section === 0" class="lg:hidden">
+        <card title="Social media" subtitle="follow me here:">
+          <div class="flex justify-center gap-2">
+              <icon-button icon="facebook"></icon-button>
+              <icon-button icon="twitter"></icon-button>
+              <icon-button icon="instagram"></icon-button>
+              <icon-button icon="linkedin"></icon-button>
+              <icon-button icon="github"></icon-button>
+            </div>
         </card>
       </kinesis-element>
       <kinesis-element>
