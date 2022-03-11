@@ -7,7 +7,7 @@ defineProps({
     company: String,
     description: String,
     educational: Boolean,
-    responsibilities: list,
+    responsibilities: [],
 })
 
 let hovered = ref(false);
