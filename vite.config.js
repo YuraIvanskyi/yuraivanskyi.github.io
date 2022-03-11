@@ -7,9 +7,8 @@ export default defineConfig({
   build: {
     minify: true,
   },
-  publicDir: 'dist',
   server: {
     host: true,
   },
-  base: "./"
+  base: "/cv/"
 })
