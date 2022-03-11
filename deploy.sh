@@ -6,9 +6,13 @@ set -e
 npm run build
 
 # navigate into the build output directory
+cd dist
 
 git init
-git add dist
+git checkout -b main
+git add -A
 git commit -m 'deploy'
 
 git push -f git@github.com:yuraivanskyi/yuraivanskyi.github.io.git main
+
+cd -
