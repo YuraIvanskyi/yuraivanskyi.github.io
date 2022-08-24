@@ -28,19 +28,19 @@ import { KinesisElement } from 'vue-kinesis';
       </div>
     </social-card>
   </kinesis-element>
-  <kinesis-element :strength="25" class="z-200 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
+  <kinesis-element :strength="25" class="z-20 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
     <decor-circle size="big" position="absolute top-96 right-72"></decor-circle>
   </kinesis-element>
-  <kinesis-element :strength="35" class="z-200 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
+  <kinesis-element :strength="35" class="z-20 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
     <decor-circle size="medium" position="absolute top-80 right-32"></decor-circle>
   </kinesis-element>
-  <kinesis-element :strength="35" class="z-200 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
+  <kinesis-element :strength="35" class="z-20 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
     <decor-circle size="medium" position="absolute bottom-4 right-80"></decor-circle>
   </kinesis-element>
-  <kinesis-element :strength="50" class="z-200 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
+  <kinesis-element :strength="50" class="z-20 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
     <decor-circle size="small" position="absolute top-72 right-72"></decor-circle>
   </kinesis-element>
-  <kinesis-element :strength="50" class="z-200 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
+  <kinesis-element :strength="50" class="z-20 hidden lg:visible md:visible absolute lg:flex right-0 h-screen">
     <decor-circle size="small" position="absolute top-48 right-48"></decor-circle>
   </kinesis-element>
 </template>
