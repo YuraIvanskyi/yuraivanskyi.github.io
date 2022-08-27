@@ -4,12 +4,12 @@ import Tile from './components/sub-components/tile.vue';
 import TextContent from './components/sub-components/text-content.vue';
 
 const randomFacts = [
-  'Experienced gamer: MMORPGs, MOBAs, RPGs, mobile arcades. DRAGON AGE!',
+  'Experienced gamer: MMORPGs, MOBAs, RPGs, FPS, mobile arcades. In the end, why not?',
   'Apart from being QA-oriented, my secondary directions are webdev, mobile, etc.',
-  'Youtube gourmet: watch actors & filming things, astrophysics, science, mythology & history, memes',
-  'Listen-to-maniac, literally spend hours listening to power/sympho/core/heavy/japanese metal, rock, composers like Antti Martikainen, Christian Friedrich Johannes Büttner, Trevor Moris.',
+  'Youtube gourmet: watch actors & movie-making things, astrophysics, science, mythology & history, memes',
+  'Listen-to-maniac, literally spend hours listening to various metal genres (power, sympho, core, heavy, folk, japanese etc.), rock, composers like Antti Martikainen, Christian Friedrich Johannes Büttner, Trevor Moris.',
   'Love sports: football, volleyball, tennis, snooker. Can also easily dare you in table-football!',
-  'Kinda like MCU movies, fantasy books, great fan of manga and anime (but not a weeb)'
+  'Kinda like MCU movies & series, fantasy books, great fan of manga and anime (but not a weeb)'
 ];
 
 const primaryContacts = [
@@ -17,16 +17,39 @@ const primaryContacts = [
   'skype: y.ivanskyi'
 ]
 
+const techIcons = [
+  { code: 'devicon-python-plain-wordmark', tooltip: '' },
+  { code: 'devicon-javascript-plain', tooltip: '' },
+  { code: 'devicon-pytest-plain-wordmark', tooltip: '' },
+  { code: 'devicon-selenium-original', tooltip: '' },
+  { code: 'devicon-html5-plain-wordmark', tooltip: '' },
+  { code: 'devicon-css3-plain-wordmark', tooltip: 'CSS3' },
+  { code: 'devicon-vuejs-plain-wordmark', tooltip: '' },
+  { code: 'devicon-vuetify-line', tooltip: '' },
+  { code: 'devicon-tailwindcss-plain', tooltip: '' },
+  { code: 'devicon-opencv-plain-wordmark', tooltip: '' },
+  { code: 'devicon-firebase-plain-wordmark', tooltip: '' },
+  { code: 'devicon-amazonwebservices-original', tooltip: '' },
+  { code: 'devicon-microsoftsqlserver-plain', tooltip: '' },
+  { code: 'devicon-docker-plain-wordmark', tooltip: 'Docker' },
+  { code: 'devicon-kubernetes-plain-wordmark', tooltip: '' },
+  { code: 'devicon-git-plain-wordmark', tooltip: '' },
+  { code: 'devicon-gitlab-plain-wordmark', tooltip: '' },
+  { code: 'devicon-jenkins-line', tooltip: '' },
+  { code: 'devicon-jira-plain', tooltip: '' },
+  { code: 'devicon-confluence-original-wordmark', tooltip: '' },
+
+]
+
 </script>
 
 <template>
   <div class="h-auto w-auto pantone-yellow
               p-3 md:p-4 lg:p-6 xl:p-10">
-    <div class="h-auto grid grid-flow-row
-                gap-3 md:gap-4 lg:gap-6 xl:gap-10
-                grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6
-                grid-rows-1 md:grid-rows-3 lg:grid-rows-4 xl:grid-rows-6">
-      <div class="col-span-2 row-span-2">
+    <div class="h-auto flex
+                gap-3 md:gap-4 lg:gap-6 xl:gap-10">
+
+      <div class="h-auto flex flex-col gap-3 md:gap-4 lg:gap-6 xl:gap-10">
         <card title="Yuriy Ivanskyi" subtitle="all about me, my skills, pros and cons">
           <text-content paragraph="Prologue..."
             text="I bring my gaming experience, automation and test-engineering industry expertise together, while being able to shapeshift for upcoming challenges to enhance your next product.">
@@ -34,46 +57,40 @@ const primaryContacts = [
           <text-content paragraph="Random facts" :list=randomFacts>
           </text-content>
         </card>
-      </div>
-      <div class="">
         <card title="Contacts">
-          <text-content paragraph="Reach me like an adult:" :list="primaryContacts">
+          <text-content paragraph="Business inquiries:" :list="primaryContacts">
           </text-content>
         </card>
       </div>
-      <div class="">
-        <card :title="3" />
+
+
+      <div class="h-auto flex flex-col gap-3 md:gap-4 lg:gap-6 xl:gap-10">
+        <card title="Contacts">
+          <text-content paragraph="Business inquiries:" :list="primaryContacts">
+          </text-content>
+        </card>
+        <card title="Key Tools" subtitle="I know and use:">
+          <tile v-for="item, index in techIcons" :key="index">
+            <i :class="`${item.code} pantone-blue-text text-5xl align-middle`"></i>
+          </tile>
+        </card>
       </div>
-      <div class="row-span-2">
-        <card :title="4" />
+
+      <div class="h-auto flex flex-col gap-3 md:gap-4 lg:gap-6 xl:gap-10">
+        <card title="Key Tools" subtitle="I know and use:">
+          <tile v-for="item, index in techIcons" :key="index">
+            <i :class="`${item.code} pantone-blue-text text-5xl align-middle`"></i>
+          </tile>
+        </card>
       </div>
-      <div class="col-span-2">
-        <card :title="5" />
+
+      <div class="h-auto flex flex-col gap-3 md:gap-4 lg:gap-6 xl:gap-10">
+        <card title="Contacts">
+          <text-content paragraph="Business inquiries:" :list="primaryContacts">
+          </text-content>
+        </card>
       </div>
-      <div class="">
-        <card :title="6" />
-      </div>
-      <div class="">
-        <card :title="7" />
-      </div>
-      <div class="">
-        <card :title="8" />
-      </div>
-      <div class="">
-        <card :title="9" />
-      </div>
-      <div class="">
-        <card :title="10" />
-      </div>
-      <div class="">
-        <card :title="11" />
-      </div>
-      <div class="">
-        <card :title="12" />
-      </div>
-      <div class="col-span-2">
-        <card :title="13" />
-      </div>
+
     </div>
   </div>
 </template>
@@ -105,7 +122,7 @@ const primaryContacts = [
   background-color: rgb(0, 91, 187);
 }
 
-.pantone-vlue-text {
+.pantone-blue-text {
   color: rgb(0, 91, 187);
 }
 
