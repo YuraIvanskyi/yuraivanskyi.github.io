@@ -7,7 +7,7 @@ import IconButton from './components/sub-components/icon-button.vue';
 
 const randomFacts = [
   'Experienced gamer: MMORPGs, MOBAs, RPGs, FPS, mobile arcades. In the end, why not?',
-  'Apart from being QA-oriented, my secondary directions are webdev, mobile, etc.',
+  'I love spicy food and sour drinks! Barbeque with hot sauces up to 2M SHU, thai food along with some lemon fresh)',
   'Youtube gourmet: watch actors & movie-making things, astrophysics, science, mythology & history, memes',
   'Listen-to-maniac, literally spend hours listening to various metal genres (power, sympho, core, heavy, folk, japanese etc.), rock, composers like Antti Martikainen, Christian Friedrich Johannes Büttner, Trevor Moris.',
   'Love sports: football, volleyball, tennis, snooker. Can also easily dare you in table-football!',
@@ -176,7 +176,13 @@ const photos = [
           </svg>
         </template>
         <template v-slot:content>
-          <text-content paragraph="QA Tester - Gameloft" :list="languages">
+          <text-content paragraph="QA Tester - Gameloft" text="My main activity was to test the game, find and describe the bugs on assigned tasks.
+Responsibilities:"
+            :list="['identify and isolate bugs on assigned tasks',
+            'describe found bugs clearly and concisely',
+            'organize and prioritize assigned tasks', 'provide clear and correct task results',
+            'produce valid test cases based on documentation',
+            'create own test cases based on gaming experience and creative point of view', 'coaching and mentoring junior members']">
           </text-content>
         </template>
       </card>
@@ -190,7 +196,12 @@ const photos = [
           </svg>
         </template>
         <template v-slot:content>
-          <text-content paragraph="QA Automation - Gameloft" :list="languages">
+          <text-content paragraph="QA Automation - Gameloft"
+            text="Main activity: writing multi-purpose scripts using general language features and internal libraries targeting games on IOS and Android. Responsibilities:"
+            :list="['creating E2E scripts for testing purposes',
+            'using internal tools & services to perform automation testing for GUI and server-side cases',
+            'contributing to traditional automation approaches within company',
+            'participating in various game automation initiatives']">
           </text-content>
         </template>
       </card>
@@ -204,7 +215,13 @@ const photos = [
           </svg>
         </template>
         <template v-slot:content>
-          <text-content paragraph="QA R&D Lead - Gameloft" :list="languages">
+          <text-content paragraph="QA R&D Lead - Gameloft"
+            text="My role included being both team and tech lead in QA R&D team, creating and delivering solutions for QA process optimisation/automation by means of scripting and/or development. Responsibilities:"
+            :list="['being the guy to google the issue first',
+            'managing local team and conducting internal trainings',
+            'monitoring and contributing to traditional automation approaches within company',
+            'participating & initiating in various game automation initiatives',
+            'prototyping and development of custom game automation tools, ideas and initiatives']">
           </text-content>
         </template>
       </card>
@@ -218,7 +235,10 @@ const photos = [
           </svg>
         </template>
         <template v-slot:content>
-          <text-content paragraph="Server Test Engineer - Amazon Games" :list="languages">
+          <text-content paragraph="Server Test Engineer - Amazon Games"
+            text="Cancelled due to russian invasion and inability to relocate to Germany. Responsibilities should've been:"
+            :list="['leading any server test related tasks in Europe',
+            'investigating bugs on live, scale test problems, or other server/service bugs that need more info/logs/metrics']">
           </text-content>
         </template>
       </card>
@@ -232,7 +252,8 @@ const photos = [
           </svg>
         </template>
         <template v-slot:content>
-          <text-content paragraph="Volunteer - Ukraine/IT army of Ukraine" :list="languages">
+          <text-content paragraph="Volunteer - Ukraine/IT army of Ukraine"
+            text="Standing in IT frontline of war. Helped with such tiny yet needed things like using ddos methods to take down Russian civil & military web resourses, showing & sharing the truth about crimes of Russia to the world.">
           </text-content>
         </template>
       </card>
@@ -246,7 +267,8 @@ const photos = [
           </svg>
         </template>
         <template v-slot:content>
-          <text-content paragraph="Senior Automation QA - VisiQuate" :list="languages">
+          <text-content paragraph="Senior Automation QA - VisiQuate"
+            text="My role is being a part of small AQA team that strives to optimise QA procedures.">
           </text-content>
         </template>
       </card>
