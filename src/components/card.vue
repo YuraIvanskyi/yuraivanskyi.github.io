@@ -8,7 +8,7 @@ defineProps({
 <template>
     <div class="pantone-blue shadow-2xl rounded-2xl h-auto w-auto mx-auto
                 p-4 md:p-5 lg:p-6 xl:p-8
-                align-middle flex flex-col
+                align-middle flex flex-col double-border
               hover:shadow-blue-500 transition duration-300 ">
         <div class="mb-1 md:mb-2 lg:mb-4 xl:mb-6 flex-shrink">
             <div class="flex justify-between">
@@ -27,4 +27,16 @@ defineProps({
 </template>
 
 <style>
+.double-border {
+    border: 2px solid;
+    border-color: rgb(209 213 219);
+    border-radius: 1rem;
+}
+
+.double-border:before {
+    padding: 2px;
+    border: 2px solid;
+    border-color: rgb(255, 213, 0);
+    border-radius: 1rem;
+}
 </style>
