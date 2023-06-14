@@ -1,11 +1,6 @@
 <script setup>
-import { reactive, ref } from 'vue';
-import Card from './components/card.vue';
-import Tile from './components/sub-components/tile.vue';
-import TextContent from './components/sub-components/text-content.vue';
-import ProgressBar from './components/sub-components/progress-bar.vue';
-import IconButton from './components/sub-components/icon-button.vue';
-
+import { reactive } from 'vue';
+import CvBlock from './components/cv-block.vue';
 import { education, jobs, languages, photos, primaryContacts, primaryTech, randomFacts, secondaryTech, social, techIcons } from './content';
 
 let state = reactive({ hoveredIcon: '' })
@@ -18,7 +13,17 @@ function hoverOff() {
 </script>
 
 <template>
-  <div class="container">
+  <div class="container m-auto">
+    <cv-block title="Contacts">
+      <div>
+        <font-awesome-icon icon="fa-solid fa-user-secret" />
+      </div>
+    </cv-block>
+    <cv-block title="Facts">{{ randomFacts }}</cv-block>
+    <cv-block title="Skills">{{ primaryTech }}</cv-block>
+    <cv-block title="Tech">{{ secondaryTech }}</cv-block>
+    <cv-block title="Jobs">{{ jobs }}</cv-block>
+    <cv-block title="Languages">{{ languages }}</cv-block>
   </div>
 </template>
 
@@ -31,5 +36,6 @@ function hoverOff() {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size: 14px;
 }
 </style>
