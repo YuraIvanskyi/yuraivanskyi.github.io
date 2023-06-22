@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.t-payton {
+    color: #344C34;
+}
+
+.payton {
+    background-color: #344C34;
+}
+
+.b-payton {
+    border-color: #344C34;
+}

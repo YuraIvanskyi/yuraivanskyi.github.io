@@ -13,16 +13,59 @@ function hoverOff() {
 </script>
 
 <template>
-  <div class="container m-auto">
-    <cv-block title="Contacts">
-      <div>
-        <font-awesome-icon icon="fa-solid fa-user-secret" />
+  <div class="container m-auto sm:py-4 lg:py-8 border-x-2 b-payton">
+    <cv-block title="Contacts & Social">
+      <div class="flex flex-row flex-wrap">
+        <div class="flex basis-1/4 justify-center items-center">
+          <font-awesome-icon icon="fa-regular fa-envelope" class="mr-2 t-payton" />
+          <a :href="`mailto:${primaryContacts.email}`">{{ primaryContacts.email }}</a>
+        </div>
+        <div class="flex basis-1/4 justify-center items-center">
+          <font-awesome-icon icon="fa-brands fa-skype" class="mr-2 t-payton" />
+          <a :href="`skype:username?chat:${primaryContacts.skype}`">{{ primaryContacts.skype }}</a>
+        </div>
+        <div v-for="brand in social" class="flex basis-1/4 justify-center items-center">
+          <font-awesome-icon :icon="`fa-brands fa-${brand.icon}`" class="mr-2 t-payton" />
+          <a :href="brand.link">{{ brand.link.split('/').at(-1) }}</a>
+        </div>
+
       </div>
     </cv-block>
-    <cv-block title="Facts">{{ randomFacts }}</cv-block>
-    <cv-block title="Skills">{{ primaryTech }}</cv-block>
-    <cv-block title="Tech">{{ secondaryTech }}</cv-block>
-    <cv-block title="Jobs">{{ jobs }}</cv-block>
+    <cv-block title="Trivia">
+      <div v-for="fact in randomFacts" class="flex justify-center items-center">
+        <span> ⁃ {{ fact }} ⁃ </span>
+      </div>
+    </cv-block>
+    <cv-block title="Skills">
+      <div class="flex flex-row flex-wrap justify-center">
+        <div class="lg:basis-1/3 flex flex-col flex-wrap">
+          <h1>Primary Skills:</h1>
+          <div class="flex flex-col flex-wrap">
+            <div v-for="fact in primaryTech">
+              <span> ⁃ {{ fact }} ⁃ </span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:basis-1/3 flex flex-col flex-wrap">
+          <h1>Secondary Skills:</h1>
+          <div class="flex flex-col flex-wrap">
+            <div v-for="fact in secondaryTech">
+              <span> ⁃ {{ fact }} ⁃ </span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:basis-1/3 flex flex-row flex-wrap items-center justify-center">
+          <h1>The Big Icons: if you know, you know )</h1>
+          <div class="flex flex-row flex-wrap justify-center">
+            <div v-for="item, index in techIcons" :key="index" @mouseenter="hoverOn(item.tooltip)"
+              @mouseleave="hoverOff()">
+              <i :class="`${item.code} t-payton text-5xl align-middle rounded-full`"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </cv-block>
+    <cv-block title="Experience">{{ jobs }}</cv-block>
     <cv-block title="Languages">{{ languages }}</cv-block>
   </div>
 </template>
@@ -30,12 +73,17 @@ function hoverOff() {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 #app {
   font-family: Raleway, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #1A1914;
   font-size: 14px;
+}
+
+body {
+  background-color: #FFFEFA;
 }
 </style>

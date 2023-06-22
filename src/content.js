@@ -4,21 +4,20 @@ export const randomFacts = [
     'Youtube gourmet: watch actors & movie-making things, astrophysics, science, mythology & history, memes',
     'Listen-to-maniac, literally spend hours listening to various metal genres (power, sympho, core, heavy, folk, japanese etc.), rock, composers like Antti Martikainen, Christian Friedrich Johannes Büttner, Trevor Moris.',
     'Love sports: football, volleyball, tennis, snooker. Can also easily dare you in table-football!',
-    'Fan of MCU movies & series, fantasy books, great fan of manga and anime (but not a weeb). And "The Boys" - that one is dope as well.'
+    'Fan of MCU movies & series, fantasy books, great fan of manga and anime (yet not a weeb). And "The Boys" - that one is dope as well.'
 ];
 
-export const primaryContacts = [
-    'email: yuraivanskyi@gmail.com',
-    'skype: y.ivanskyi'
-]
+export const primaryContacts = {
+    email: 'yuraivanskyi@gmail.com', skype: 'y.ivanskyi'
+}
 
 export const social = [
     { link: 'https://twitter.com/i1skyi', icon: 'twitter' },
     { link: 'https://www.facebook.com/yurii.ivanskyi', icon: 'facebook' },
-    { link: 'https://www.instagram.com/yuriyivanskyi/', icon: 'instagram' },
-    { link: 'https://www.linkedin.com/in/yuraivanskyi/', icon: 'linkedin' },
+    { link: 'https://www.instagram.com/yuriyivanskyi', icon: 'instagram' },
+    { link: 'https://www.linkedin.com/in/yuraivanskyi', icon: 'linkedin' },
     { link: 'https://github.com/YuraIvanskyi', icon: 'github' },
-    { link: 'https://www.twitch.tv/i1sky', icon: 'twitch' },
+    { link: 'https://www.twitch.tv/i1skyi', icon: 'twitch' },
 ]
 
 export const techIcons = [
@@ -45,15 +44,16 @@ export const techIcons = [
 ]
 
 export const primaryTech = [
-    'game quality assuarance: desktop, web, mobile',
+    'automation testing using Python, less JavaScript',
     'E2E, functional, performance etc. testing on target product',
-    'automation testing using Python, less JavaScript, ',
+    'game quality assuarance: desktop, web, mobile',
     'visual automation testing with opencv',
     'documentation, test plans, test strategies, reporting',
 ]
 
 export const secondaryTech = [
     'a bit of front-end development (mostly on Vue, Vite, Vuetify)',
+    'a bit of tinkering here and there (plugins, addons, etc.)',
     'handle, organize and lead small team',
     'nonchalantly talk on meetings',
 ]
@@ -69,6 +69,7 @@ export const languages = [
 ]
 
 export const photos = [
+    'src\\assets\\me6.jpg',
     'src\\assets\\me2.jpg',
     'src\\assets\\m4.jpg',
     'src\\assets\\me1.png',
