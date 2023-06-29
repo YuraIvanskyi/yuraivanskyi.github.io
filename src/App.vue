@@ -1,6 +1,8 @@
 <script setup>
 import { reactive } from 'vue';
 import CvBlock from './components/cv-block.vue';
+import timelineElement from './components/sub-components/timeline-element.vue';
+import progressBar from './components/sub-components/progress-bar.vue';
 import { education, jobs, languages, photos, primaryContacts, primaryTech, randomFacts, secondaryTech, social, techIcons } from './content';
 
 let state = reactive({ hoveredIcon: '' })
@@ -13,7 +15,7 @@ function hoverOff() {
 </script>
 
 <template>
-  <div class="container m-auto sm:py-4 lg:py-8 border-x-2 b-payton">
+  <div class="container m-auto sm:py-4 lg:py-8 b-payton">
     <cv-block title="Contacts & Social">
       <div class="flex flex-row flex-wrap">
         <div class="flex basis-1/4 justify-center items-center">
@@ -55,7 +57,7 @@ function hoverOff() {
           </div>
         </div>
         <div class="lg:basis-1/3 flex flex-row flex-wrap items-center justify-center">
-          <h1>The Big Icons: if you know, you know )</h1>
+          <h1>The Big Icons: if you know, you know :)</h1>
           <div class="flex flex-row flex-wrap justify-center">
             <div v-for="item, index in techIcons" :key="index" @mouseenter="hoverOn(item.tooltip)"
               @mouseleave="hoverOff()">
@@ -65,8 +67,29 @@ function hoverOff() {
         </div>
       </div>
     </cv-block>
-    <cv-block title="Experience">{{ jobs }}</cv-block>
-    <cv-block title="Languages">{{ languages }}</cv-block>
+    <cv-block title="Experience">
+      <div class="flex flex-col gap-4 justify-left px-4">
+        <ol class="relative border-l border-gray-200">
+          <timeline-element v-for="period in jobs" :title="period.title" :company="period.company" :educational="false"
+            :responsibilities="period.responsibilities" :description="period.desc" :start="period.start"
+            :logo="period.logo" :end="period.end" />
+        </ol>
+      </div>
+    </cv-block>
+    <cv-block title="Education">
+      <div class="flex flex-row">
+        <div class="flex flex-col gap-4 justify-left px-4">
+          <ol class="relative border-l border-gray-200">
+            <timeline-element v-for="period in education" :title="period.title" :company="period.company"
+              :educational="true" :description="period.subtitle" :start="period.start" :end="period.end" />
+          </ol>
+        </div>
+        <div class="flex flex-col gap-2 justify-left px-2">
+          <h1>Languages (not great not terrible)</h1>
+          <progress-bar v-for="lang in languages" :metric="lang.lang" :level="lang.level" :note="lang.note" />
+        </div>
+      </div>
+    </cv-block>
   </div>
 </template>
 
@@ -80,7 +103,7 @@ function hoverOff() {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #1A1914;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 body {

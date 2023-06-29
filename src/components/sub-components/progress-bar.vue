@@ -9,29 +9,28 @@ defineProps({
 <template>
     <div class="">
         <div class="flex items-center justify-between">
-            <div>
-                <span class="text-xs font-bold inline-block px-1 uppercase rounded-md pantone-blue-text pantone-yellow">
+            <div class="text-left basis-1/3">
+                <span class="text-xs font-bold inline-block px-1 uppercase rounded-md t-payton">
                     {{ metric }}
                 </span>
             </div>
-            <div class="text-center">
-                <span class="text-xs font-bold inline-block pantone-yellow-text">
+            <div class="text-center basis-1/3">
+                <span class="text-xs font-bold inline-block t-payton">
                     {{ level }}%
                 </span>
             </div>
-            <div class="text-right">
-                <span class="text-xs font-bold inline-block pantone-yellow-text">
+            <div class="text-right basis-1/3">
+                <span class="text-xs font-bold inline-block t-payton">
                     {{ note }}
                 </span>
             </div>
         </div>
-        <div class="overflow-hidden h-3 text-xs flex rounded pantone-yellow border-2">
+        <div class="overflow-hidden h-2 text-xs flex rounded border-2">
             <div :style="`width: ${level}%`"
-                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center pantone-blue">
+                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center payton">
             </div>
         </div>
     </div>
 </template>
     
-<style>
-</style>
+<style></style>
