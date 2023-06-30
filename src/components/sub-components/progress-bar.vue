@@ -10,7 +10,7 @@ defineProps({
     <div class="">
         <div class="flex items-center justify-between">
             <div class="text-left basis-1/3">
-                <span class="text-xs font-bold inline-block px-1 uppercase rounded-md t-payton">
+                <span class="text-xs font-bold inline-block px-1 rounded-md t-payton">
                     {{ metric }}
                 </span>
             </div>

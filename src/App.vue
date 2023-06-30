@@ -15,60 +15,78 @@ function hoverOff() {
 </script>
 
 <template>
-  <div class="container m-auto sm:py-4 lg:py-8 b-payton">
+  <div class="container m-auto py-4 lg:py-8 b-payton">
     <cv-block title="Contacts & Social">
-      <div class="flex flex-row flex-wrap">
-        <div class="flex basis-1/4 justify-center items-center">
-          <font-awesome-icon icon="fa-regular fa-envelope" class="mr-2 t-payton" />
-          <a :href="`mailto:${primaryContacts.email}`">{{ primaryContacts.email }}</a>
+      <div class="flex flex-col lg:flex-row gap-4 justify-around items-center">
+        <div class="border border-gray-200 rounded-2xl p-1">
+          <img class="shrink drop-shadow-md rounded-xl min-h-60 min-w-60 h-60 w-60" :src="photos[0]" alt="">
         </div>
-        <div class="flex basis-1/4 justify-center items-center">
-          <font-awesome-icon icon="fa-brands fa-skype" class="mr-2 t-payton" />
-          <a :href="`skype:username?chat:${primaryContacts.skype}`">{{ primaryContacts.skype }}</a>
+        <span class="font-light tracking-widest drop-shadow-md my-auto text-6xl text-gray-900">
+          Yurii Ivanskyi
+        </span>
+        <div class="flex flex-wrap gap-x-8 lg:flex-col mx-4 items-start">
+          <a :href="`mailto:${primaryContacts.email}`">
+            <font-awesome-icon icon="fa-regular fa-envelope" class="t-payton align-middle" />
+            {{ primaryContacts.email }}
+          </a>
+          <a :href="`skype:username?chat:${primaryContacts.skype}`">
+            <font-awesome-icon icon="fa-brands fa-skype" class=" t-payton align-middle" />
+            {{ primaryContacts.skype }}
+          </a>
+          <a v-for="brand in social" :href="brand.link">
+            <font-awesome-icon :icon="`fa-brands fa-${brand.icon}`" class="t-payton align-middle" />
+            {{ brand.link.split('/').at(-1) }}
+          </a>
         </div>
-        <div v-for="brand in social" class="flex basis-1/4 justify-center items-center">
-          <font-awesome-icon :icon="`fa-brands fa-${brand.icon}`" class="mr-2 t-payton" />
-          <a :href="brand.link">{{ brand.link.split('/').at(-1) }}</a>
-        </div>
-
       </div>
     </cv-block>
     <cv-block title="Trivia">
-      <div v-for="fact in randomFacts" class="flex justify-center items-center">
-        <span> ⁃ {{ fact }} ⁃ </span>
-      </div>
+      <div class="flex flex-col text-justify">{{ randomFacts.join(' ✤ ') }}</div>
     </cv-block>
     <cv-block title="Skills">
-      <div class="flex flex-row flex-wrap justify-center">
-        <div class="lg:basis-1/3 flex flex-col flex-wrap">
-          <h1>Primary Skills:</h1>
-          <div class="flex flex-col flex-wrap">
-            <div v-for="fact in primaryTech">
-              <span> ⁃ {{ fact }} ⁃ </span>
-            </div>
+      <div class="flex flex-col lg:flex-row flex-wrap justify-center gap-4">
+        <div class="flex flex-col flex-wrap items-center">
+          <div class="flex flex-col">
+            <h1>Primary:</h1>
+            <span v-for="fact in primaryTech" class="text-justify"> ✤ {{ fact }}</span>
           </div>
         </div>
-        <div class="lg:basis-1/3 flex flex-col flex-wrap">
-          <h1>Secondary Skills:</h1>
-          <div class="flex flex-col flex-wrap">
-            <div v-for="fact in secondaryTech">
-              <span> ⁃ {{ fact }} ⁃ </span>
-            </div>
+        <div class="border-t visible lg:hidden border-gray-200 my-auto max-h-1 grow align-baseline mx-4">
+        </div>
+        <div class="flex flex-col flex-wrap items-center">
+          <div class="flex flex-col">
+            <h1>Secondary:</h1>
+            <span v-for="fact in secondaryTech" class="text-justify"> ✤ {{ fact }}</span>
           </div>
         </div>
-        <div class="lg:basis-1/3 flex flex-row flex-wrap items-center justify-center">
-          <h1>The Big Icons: if you know, you know :)</h1>
+        <div class="border-t visible lg:hidden border-gray-200 my-auto max-h-1 grow align-baseline mx-4">
+        </div>
+        <div class="flex flex-col lg:basis-1/3 2xl:basis-1/6 items-center justify-center gap-2">
+          <h1>
+            <font-awesome-icon icon="fa-solid fa-bug" class="t-payton align-middle mr-2" />
+            The Big Tech
+            <font-awesome-icon icon="fa-solid fa-code-branch" class="t-payton align-middle ml-2" />
+          </h1>
           <div class="flex flex-row flex-wrap justify-center">
-            <div v-for="item, index in techIcons" :key="index" @mouseenter="hoverOn(item.tooltip)"
-              @mouseleave="hoverOff()">
-              <i :class="`${item.code} t-payton text-5xl align-middle rounded-full`"></i>
+            <div v-for="item, index in techIcons" :key="index">
+              <i :class="`${item.code} t-payton text-4xl md:text-5xl align-middle rounded-full`"></i>
             </div>
           </div>
+        </div>
+        <div class="border-t visible lg:hidden border-gray-200 my-auto max-h-1 grow align-baseline mx-4">
+        </div>
+        <div class="flex flex-col md:basis-1/2 lg:basis-1/3 2xl:basis-1/6 justify-left grow lg:grow-0 md:m-auto px-4">
+          <h1>
+            <font-awesome-icon icon="fa-solid fa-globe" class="t-payton align-middle mr-2" />
+            Languages
+            <font-awesome-icon icon="fa-solid fa-language" class="t-payton align-middle ml-2" />
+          </h1>
+          <progress-bar v-for="lang in languages" :metric="lang.lang" :level="lang.level" :note="lang.note" />
         </div>
       </div>
     </cv-block>
     <cv-block title="Experience">
-      <div class="flex flex-col gap-4 justify-left px-4">
+      <div class="flex flex-col gap-4 justify-left px-2 md:px-4">
         <ol class="relative border-l border-gray-200">
           <timeline-element v-for="period in jobs" :title="period.title" :company="period.company" :educational="false"
             :responsibilities="period.responsibilities" :description="period.desc" :start="period.start"
@@ -77,16 +95,12 @@ function hoverOff() {
       </div>
     </cv-block>
     <cv-block title="Education">
-      <div class="flex flex-row">
-        <div class="flex flex-col gap-4 justify-left px-4">
+      <div class="flex flex-col">
+        <div class="flex flex-col gap-4 justify-left px-2 md:px-4">
           <ol class="relative border-l border-gray-200">
             <timeline-element v-for="period in education" :title="period.title" :company="period.company"
-              :educational="true" :description="period.subtitle" :start="period.start" :end="period.end" />
+              :educational="true" :description="period.desc" :start="period.start" :end="period.end" />
           </ol>
-        </div>
-        <div class="flex flex-col gap-2 justify-left px-2">
-          <h1>Languages (not great not terrible)</h1>
-          <progress-bar v-for="lang in languages" :metric="lang.lang" :level="lang.level" :note="lang.note" />
         </div>
       </div>
     </cv-block>

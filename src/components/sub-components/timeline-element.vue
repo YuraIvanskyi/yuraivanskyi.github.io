@@ -21,20 +21,21 @@ defineProps({
                 <font-awesome-icon v-else class="t-payton" icon="fa-solid fa-graduation-cap" />
             </span>
             <!-- <div v-if="!hovered" class="payton float-right align-middle rounded-full h-2 w-2 animate-pulse right-0"></div> -->
-            <h3 class="flex flex-row items-center font-semibold my-0 text-lg text-gray-900">
+            <h3 class="flex flex-col md:flex-row md:items-center font-semibold my-0 text-lg text-gray-900">
                 <span class="text-left">{{ title }}</span>
-                <div v-if="!educational" class="border-t border-gray-200 my-auto max-h-1 grow align-baseline mx-4"></div>
-                <span v-if="!educational" class="text-right">{{ company }}</span>
+                <div class="md:border-t border-gray-200 my-auto max-h-1 grow align-baseline mx-4"></div>
+                <span class="md:text-right">{{ company }}</span>
             </h3>
             <time class="block mb-1 text-sm font-normal t-payton">{{ start }} - {{ end }}</time>
-            <div class="flex flex-row gap-6">
-                <p class="basis-1/3 mb-1 text-base font-normal text-gray-500">{{ description }}</p>
+            <div class="flex flex-col gap-2 xl:flex-row xl:gap-8">
+                <p class="lg:basis-1/3 mb-1 text-base font-normal t-payton text-justify">{{ description }}</p>
                 <div class="grow">
                     <p v-if="!educational" class="text-sm font-normal t-payton">Responsibilities:</p>
-                    <p v-for="line in responsibilities" class="text-sm font-normal text-gray-500"> - {{ line }}</p>
+                    <p v-for="line in responsibilities" class="text-sm font-normal text-justify"> - {{ line }}
+                    </p>
                 </div>
-                <img class="shrink m-auto right-0 object-right object-contain h-20 w-20" v-if="!educational" :src="logo"
-                    alt="">
+                <img class="shrink m-auto rounded-md right-0 object-right object-contain h-20 w-20" v-if="!educational"
+                    :src="logo" alt="">
             </div>
         </div>
 

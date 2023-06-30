@@ -1,9 +1,9 @@
 export const randomFacts = [
-    'Experienced gamer: MMORPGs, MOBAs, RPGs, FPS, mobile arcades. In the end, why not?',
-    'I love spicy food and sour drinks! Don\'t mind barbeque with hot sauces up to 2M SHU, thai food along with some lemon fresh)',
+    'Experienced gamer: MMORPGs, MOBAs, RPGs, FPS, mobile arcades. I\'ve got them all! Favorites? Dragon Age series, Divinity Original Sin 2, Titan Quest.',
+    'I love spicy food and sour drinks! Don\'t mind some barbeque with hot sauces up to 2M SHU, thai food along with some lemon fresh)',
     'Youtube gourmet: watch actors & movie-making things, astrophysics, science, mythology & history, memes',
     'Listen-to-maniac, literally spend hours listening to various metal genres (power, sympho, core, heavy, folk, japanese etc.), rock, composers like Antti Martikainen, Christian Friedrich Johannes Büttner, Trevor Moris.',
-    'Love sports: football, volleyball, tennis, snooker. Can also easily dare you in table-football!',
+    'Love sports: football, volleyball, tennis, snooker, some daily activity routines. Can also easily dare you in table-football!',
     'Fan of MCU movies & series, fantasy books, great fan of manga and anime (yet not a weeb). And "The Boys" - that one is dope as well.'
 ];
 
@@ -45,8 +45,8 @@ export const techIcons = [
 
 export const primaryTech = [
     'automation testing using Python, less JavaScript',
-    'E2E, functional, performance etc. testing on target product',
-    'game quality assuarance: desktop, web, mobile',
+    'automation infrastructure setup, CI/CD',
+    'game & software quality assuarance: web, mobile',
     'visual automation testing with opencv',
     'documentation, test plans, test strategies, reporting',
 ]
@@ -54,14 +54,15 @@ export const primaryTech = [
 export const secondaryTech = [
     'a bit of front-end development (mostly on Vue, Vite, Vuetify)',
     'a bit of tinkering here and there (plugins, addons, etc.)',
+    'operate in agile project environments',
     'handle, organize and lead small team',
-    'nonchalantly talk on meetings',
+    'nonchalantly talk on meetings & make the "nice guy" impression',
 ]
 
 export const languages = [
     { lang: 'Ukrainian', level: 100, note: 'Native' },
     { lang: 'English', level: 90, note: 'Fluent' },
-    { lang: 'Japanese', level: 15, note: 'N5 (Beginner)' },
+    { lang: 'Japanese', level: 15, note: 'N5' },
     { lang: 'German', level: 10, note: 'Beginner' },
     { lang: 'Polish', level: 15, note: 'Beginner' },
     { lang: 'Korean', level: 5, note: 'Elementary' },
@@ -175,7 +176,8 @@ export const jobs = [
 ]
 
 export const education = [
-    { title: 'Master\'s Degree - Software Engineering', start: '2018', end: '2020', subtitle: 'Lviv Polytechnic National University' },
-    { title: 'Bachelor\'s Degree - Software Engineering', start: '2014', end: '2018', subtitle: 'Lviv Polytechnic National University' },
-    { title: 'Student', start: '2003', end: '2014', subtitle: 'Horodok Gymnasium, Horodok' },
+    { title: 'PM Excellence Course', desc: 'Project management', start: '2020', end: '2021', company: 'Lviv IT PM School' },
+    { title: 'Master\'s Degree', desc: 'Software Engineering', start: '2018', end: '2020', company: 'Lviv Polytechnic National University' },
+    { title: 'Bachelor\'s Degree', desc: 'Software Engineering', start: '2014', end: '2018', company: 'Lviv Polytechnic National University' },
+    { title: 'Student', desc: 'Foreign Languages', start: '2003', end: '2014', company: 'Horodok Gymnasium, Horodok' },
 ]
