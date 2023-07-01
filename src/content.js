@@ -70,11 +70,11 @@ export const languages = [
 ]
 
 export const photos = [
-    'src\\assets\\me6.jpg',
-    'src\\assets\\me2.jpg',
-    'src\\assets\\m4.jpg',
-    'src\\assets\\me1.png',
-    'src\\assets\\m3.jpg',
+    'assets\\me6.jpg',
+    'assets\\me2.jpg',
+    'assets\\m4.jpg',
+    'assets\\me1.png',
+    'assets\\m3.jpg',
 ]
 
 export const jobs = [
