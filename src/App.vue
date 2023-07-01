@@ -75,7 +75,7 @@ function hoverOff() {
         </div>
         <div class="border-t visible lg:hidden border-gray-200 my-auto max-h-1 grow align-baseline mx-4">
         </div>
-        <div class="flex flex-col md:basis-1/2 lg:basis-1/3 2xl:basis-1/6 justify-left grow lg:grow-0 md:m-auto px-4">
+        <div class="flex flex-col md:basis-1/2 lg:basis-1/3 2xl:basis-1/6 justify-left grow lg:grow-0 px-4">
           <h1>
             <font-awesome-icon icon="fa-solid fa-globe" class="t-payton align-middle mr-2" />
             Languages
